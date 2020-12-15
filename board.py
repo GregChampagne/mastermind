@@ -1,12 +1,28 @@
 COL_LENGTH = 10
+ROW_LENGTH = 4
+COLORS = 6
+
+import random
 
 class Board:
     # Constructor for the board class
-    def __init__(self, answer):
+    def __init__(self):
         self.rows = []
-        self.answer = answer
+        self.answer = []
         self.win = False
         self.lose = False
+
+    # Method to input a new answer
+    def input_answer(self, answer):
+        self.answer = answer
+
+    # Method to randomly generate an answer
+    def create_answer(self):
+        arr = []
+        for i in range(0, ROW_LENGTH):
+            arr.append(random.randint(1, COLORS))
+
+        self.answer = arr
 
     # Method to input a given play to the board
     def input_play(self, p):

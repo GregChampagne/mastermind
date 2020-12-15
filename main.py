@@ -1,23 +1,23 @@
-ROW_LENGTH = 4
-COLORS = 6
-
 import board
-import game
-import random
+import pygame
+import ui
 
-# Create a random answer
-arr = []
-for i in range(0, ROW_LENGTH):
-    arr.append(random.randint(1, COLORS))
+"""
+Game Runners
+"""
 
-# a = [2, 2, 3, 3]
-a = arr
+# Start pygame
+pygame.init()
+pygame.display.set_caption("Mastermind")
 
-# Send the random answer into a new board
-b = board.Board(a)
+# Create a board
+b = board.Board()
+# Create an answer
+b.create_answer()
 
-# Create a game using the board
-g = game.Mastermind(b)
+# Menu Startup
+ui.start_game(b)
 
-# Play a game
-g.play_game()
+# End Pygame
+pygame.quit()
+

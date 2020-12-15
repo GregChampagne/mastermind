@@ -3,11 +3,10 @@ ROW_LENGTH = 4
 class Attempt:
 
     # A row constructor for a given guess
-    def __init__(self, guess, answer):
+    def __init__(self, guess):
         self.row = guess
         self.red = 0
         self.white = 0
-        self.calculate_red_and_white(guess, answer)
 
     def calculate_red_and_white(self, guess, answer):
         # Copy guess and answer to temporary arrays
